@@ -33,6 +33,8 @@
       						<th>Who came</th>
       						<th>Next Appointment Date</th>
       						<th> Status</th>
+                  <th> No of days</th>
+                  <th>Action</th>
       					</tr>
       					<thead>
       						<tbody>
@@ -43,7 +45,27 @@
       								<td>{{$visit->visittype}}</td>
       								<td>{{$visit->vperson}}</td>
       								<td>{{$visit->tca}}</td>
-      								<td>{{$visit->id}}</td>
+      								<td>
+                        @if (strtotime($visit->tca) < strtotime(now()))
+                        <span class="badge bg-danger">Missed</span>
+                        @else
+                        <span class="badge bg-warning">Upcoming</span>
+                        @endif        
+                      </td>
+                      <td>
+                        @php
+                          $tcaDate = \Carbon\Carbon::parse($visit->tca);
+                          $differenceInDays = now()->diffInDays($tcaDate);
+                      @endphp
+                      <span class="badge bg-info">{{$differenceInDays}} days</span>
+                      </td>
+                      <td>
+                        @if (strtotime($visit->tca) < strtotime(now()) & $differenceInDays>=7 )
+                        <span class="badge bg-danger">Due for Tracing</span>
+                        @else
+                        <span class="badge bg-danger">To be monitored</span>
+                        @endif
+                      </td>
       							</tr>
       							@endforeach
       						</tbody>

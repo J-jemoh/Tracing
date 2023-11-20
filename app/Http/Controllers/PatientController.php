@@ -12,6 +12,18 @@ class PatientController extends Controller
 
     public function store(Request $request){
 
+         $picture1 = $request->file('pic_1')->store('pictures', 'public');
+         if ($request->hasFile('pic_2')) {
+        $picture2 = $request->file('pic_2')->store('pictures', 'public');
+        } else {
+            $picture2 = null; // Set a default value or handle it as per your requirements
+        }
+        if ($request->hasFile('pic_3')) {
+        $picture3 = $request->file('pic_3')->store('pictures', 'public');
+        } else {
+            $picture3 = null; // Set a default value or handle it as per your requirements
+        }
+
         $patient=Patients::create([
             'patient_id'=>$request->patientID,
             'firstname'=>$request->Fname,
@@ -29,6 +41,9 @@ class PatientController extends Controller
             'gurd_number'=>$request->gphone,
             'gurd_alt_phone'=>$request->galternative_phone,
             'locator_details'=>$request->locator,
+            'pic1'=>$picture1,
+            'pic2'=>$picture2,
+            'pic3'=>$picture3
 
         ]);
         return redirect()->route('dashboard.allpatients')->with('success','Patient created successfully');
@@ -99,4 +114,5 @@ class PatientController extends Controller
         return redirect()->route('dashboard.allpatients')->with('success','Patient Restored successfully');
 
     }
+
 }

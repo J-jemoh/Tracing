@@ -63,6 +63,16 @@
       				</div>
       			</div>
       		</div>
+          <div class="card-header"><b>Picture Information</b></div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-4">
+                <img src="{{asset('storage/'.$patient->pic1)}}" alt="Picture">
+              </div>
+              <div class="col-4"></div>
+              <div class="col-4"></div>
+            </div>
+          </div>
       	</div>
       </div>
   </section>

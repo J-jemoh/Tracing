@@ -12,8 +12,9 @@ class DashboardController extends Controller
 
     public function index(){
         $latest_users=User::orderBy('created_at','desc')->get();
-
-        return view('admin.dashboard',compact('latest_users'));
+        $patients=Patients::count();
+        $users=User::count();
+        return view('admin.dashboard',compact('latest_users','patients','users'));
     }
     public function patients(){
         $patients=Patients::get();

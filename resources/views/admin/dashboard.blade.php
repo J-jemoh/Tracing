@@ -26,14 +26,15 @@
           <div class="col-12 col-sm-6 col-md-3">
             <div class="info-box">
               <span class="info-box-icon bg-info elevation-1"><i class="fas fa-cog"></i></span>
-
+              <a href="{{route('dashboard.allpatients')}}">
               <div class="info-box-content">
                 <span class="info-box-text">Total Patients</span>
                 <span class="info-box-number">
-                  0
+                  {{$patients}}
                   <small></small>
                 </span>
               </div>
+            </a>
               <!-- /.info-box-content -->
             </div>
             <!-- /.info-box -->
@@ -45,7 +46,7 @@
 
               <div class="info-box-content">
                 <span class="info-box-text">Total Health officers</span>
-                <span class="info-box-number">0</span>
+                <span class="info-box-number">{{$users}}</span>
               </div>
               <!-- /.info-box-content -->
             </div>
@@ -62,7 +63,7 @@
 
               <div class="info-box-content">
                 <span class="info-box-text">Patients Traced</span>
-                <span class="info-box-number">0</span>
+                <span class="info-box-number">{{$patients}}</span>
               </div>
               <!-- /.info-box-content -->
             </div>
@@ -117,7 +118,7 @@
                 <div class="row">
                   <div class="col-md-8">
                     <p class="text-center">
-                      <strong>Sales: 1 Jan, 2021 - 30 Jul, 2022</strong>
+                      <strong>Patients: 1 Jan, 2021 - 30 Dec, 2023</strong>
                     </p>
 
                     <div class="chart">
@@ -133,7 +134,7 @@
                     </p>
 
                     <div class="progress-group">
-                      Add Products to Cart
+                      Patients Registered
                       <span class="float-right"><b>0</b>/200</span>
                       <div class="progress progress-sm">
                         <div class="progress-bar bg-primary" style="width:"></div>
@@ -142,7 +143,7 @@
                     <!-- /.progress-group -->
 
                     <div class="progress-group">
-                      Complete Purchase
+                      Patient Traced
                       <span class="float-right"><b>0</b>/400</span>
                       <div class="progress progress-sm">
                         <div class="progress-bar bg-danger" style="width:"></div>
@@ -151,7 +152,7 @@
 
                     <!-- /.progress-group -->
                     <div class="progress-group">
-                      <span class="progress-text">Visit Premium Page</span>
+                      <span class="progress-text">Patient not Traced</span>
                       <span class="float-right"><b>0</b>/800</span>
                       <div class="progress progress-sm">
                         <div class="progress-bar bg-success" style="width: 60%"></div>
@@ -160,7 +161,7 @@
 
                     <!-- /.progress-group -->
                     <div class="progress-group">
-                      Send Inquiries
+                      Patient missed visit
                       <span class="float-right"><b>0</b>/500</span>
                       <div class="progress progress-sm">
                         <div class="progress-bar bg-warning" style="width: 50%"></div>

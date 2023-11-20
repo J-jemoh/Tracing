@@ -24,7 +24,7 @@
       	<div class="card">
       		<div class="card-header"><b>Add new patient</b></div>
       		<div class="card-body">
-      			<form method="post" action="{{route('patient.store')}}">
+      			<form method="post" action="{{route('patient.store')}}" enctype="multipart/form-data">
               @csrf
       				<div class="row">
       					<div class="col-4">
@@ -104,6 +104,19 @@
       					</div>
       				
       				</div><br>
+              <p><b>Picture details</b></p><hr>
+              <div class="row">
+                <div class="col-4">
+                <input type="file" class="form-control" placeholder="guardian name" name="pic_1" required>
+                </div>
+                <div class="col-4">
+                  <input type="file" class="form-control" placeholder="gurdian phone" name="pic_2" >
+                  
+                </div>
+                <div class="col-4">
+                  <input type="file" class="form-control" placeholder="alternative phone" name="pic_3" >
+                </div>
+              </div>
       				<div class="row">
       					<div class="col-12">
 					      <button type="submit" class="btn btn-primary float-right">Save details</button>
