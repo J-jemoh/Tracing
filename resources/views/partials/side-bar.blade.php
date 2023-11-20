@@ -63,6 +63,32 @@
               </p>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="{{route('patient.trashed')}}" class="nav-link">
+              <i class="nav-icon fas fa-users"></i>
+              <p>
+               Trashed Patients
+              </p>
+            </a>
+          </li>
+          <li class="nav-header text-success"><b>VISITS</b></li>
+
+          <li class="nav-item">
+            <a href="{{route('dashboard.visit')}}" class="nav-link">
+              <i class="nav-icon fas fa-users"></i>
+              <p>
+                Schedule a Visit
+              </p>
+            </a>
+          </li>
+            <li class="nav-item">
+            <a href="{{route('patient.allVisits')}}" class="nav-link">
+              <i class="nav-icon fas fa-users"></i>
+              <p>
+               All Visit
+              </p>
+            </a>
+          </li>
 
         
      

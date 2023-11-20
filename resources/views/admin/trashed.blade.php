@@ -22,7 +22,7 @@
      <section class="content">
       <div class="container-fluid">
       	<div class="card">
-      		<div class="card-header"><b>All patients</b></div>
+      		<div class="card-header"><b>All Trashed patients</b></div>
       		<div class="card-body">
       			<table class="table table-striped table-bordered table-condensed" id="patient-table">
       				<thead>
@@ -49,9 +49,8 @@
                   <td>{{$patient->location}}</td>
                   <td> 
                     <div class="btn-group" role="group" aria-label="Basic example">
-                      <a type="a" href="{{route('patient.view',$patient->id)}}" class="btn btn-secondary">view</a>
-                      <a type="a" href="{{route('patient.edit',$patient->id)}}" class="btn btn-primary">edit</a>
-                      <a type="a" href="{{route('patient.trash',$patient->id)}}" class="btn btn-danger">delete</a>
+                      <a type="a" href="{{route('patient.restore',$patient->id)}}" class="btn btn-primary">Restore</a>
+                      <a type="a" href="#" class="btn btn-danger">delete</a>
                     </div>
                   </td>
 

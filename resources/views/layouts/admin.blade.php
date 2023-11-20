@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="csrf-token" content="{{ csrf_token() }}">
-  <title>{{ config('app.name', 'UNIHUBX') }} | @yield('title', 'UNIVERSAL HUB')</title>
+  <title>{{ config('app.name', 'TRACING') }} | @yield('title', 'TRACING')</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <!-- Google Font: Source Sans Pro -->
@@ -43,7 +43,7 @@
       <div class="float-right d-none d-sm-block">
         <b>Version</b> 0.1.0
       </div>
-      <strong>Copyright &copy; {{date('Y')}} UNIHUBX .</strong> All rights reserved.
+      <strong>Copyright &copy; {{date('Y')}} TRACING .</strong> All rights reserved.
     </footer>
 
     <!-- Control Sidebar -->

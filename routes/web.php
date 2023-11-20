@@ -30,9 +30,19 @@ Route::prefix('/dashboard')->middleware(['auth'])->group(function(){
     Route::get('/all-patients',[DashboardController::class,'allpatients'])->name('dashboard.allpatients');
     Route::get('/patients/to-be-traced',[DashboardController::class,'tobetraced'])->name('dashboard.tobetraced');
     Route::get('/patients/traced',[DashboardController::class,'traced'])->name('dashboard.traced');
+    Route::get('/schedule/visit',[DashboardController::class,'schedulevisit'])->name('dashboard.visit');
+    Route::get('/schedule/visit/{id}',[DashboardController::class,'captureVisit'])->name('dashboard.captureVisit');
+    Route::get('/all-visits',[DashboardController::class,'allVisits'])->name('patient.allVisits');
 
     Route::prefix('/patient')->middleware(['auth'])->group(function(){
         Route::post('/',[PatientController::class,'store'])->name('patient.store');
+        Route::post('/visit',[PatientController::class,'storeVisit'])->name('patient.storeVisit');
+        Route::get('/view/{id}',[PatientController::class,'viewPatient'])->name('patient.view');
+        Route::get('/edit/{id}',[PatientController::class,'editPatient'])->name('patient.edit');
+        Route::post('/update/{id}',[PatientController::class,'UpdatePatient'])->name('patient.update');
+        Route::get('/trash/{id}',[PatientController::class,'trashPatient'])->name('patient.trash');
+        Route::get('/trashed/all',[PatientController::class,'trashedPatients'])->name('patient.trashed');
+         Route::get('/Restore/{id}',[PatientController::class,'RestorePatients'])->name('patient.restore');
 
     });
 
